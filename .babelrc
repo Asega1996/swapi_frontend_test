@@ -1,0 +1,39 @@
+{
+    "presets": [
+        "react-app",
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "node": "current"
+                }
+            }
+        ],
+        "@babel/preset-typescript"
+    ],
+    "plugins": [
+        [
+            "module-resolver",
+            {
+                "root": ".",
+                "alias": {
+                    "@Assets": "./src/assets",
+                    "@Components": "./src/components",
+                    "@Screens": "./src/screens",
+                    "@Routes": "./src/routes",
+                    "@Services": "./src/services",
+                    "@Store": "./src/store",
+                    "@Styles": "./src/styles",
+                    "@Utils": "./src/utils",
+                    "@Layout": "./src/layout"
+                }
+            }
+        ],
+        [
+            "@babel/plugin-proposal-private-property-in-object",
+            {
+                "loose": true
+            }
+        ]
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "test": "prueba téctinca - alejandro segovia gallardo",
+    "page-not-found": "página no encontrada",
+    "loading": "cargando...",
+    "planets": "Planetas",
+    "starships": "Naves",
+    "vehicles": "Vehículos",
+    "unknown": "Desconocido",
+    "errorMessage": "Ups, parece que algo ha ido mal, inténtelo de nuevo más tarde."
+}

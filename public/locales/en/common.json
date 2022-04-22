@@ -1,0 +1,10 @@
+{
+    "test": "technical test - alejandro segovia gallardo",
+    "page-not-found": "page not found",
+    "loading": "loading...",
+    "planets": "Planets",
+    "starships": "Starships",
+    "vehicles": "Vehicles",
+    "unknown": "Unknown",
+    "errorMessage": "Oops, something seems to have gone wrong, try again later"
+}
