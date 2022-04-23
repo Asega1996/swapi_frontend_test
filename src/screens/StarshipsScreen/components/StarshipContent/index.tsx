@@ -19,7 +19,6 @@ export const StarshipContent: React.FC<StarshipContentProps> = ({
     crew,
     price,
     hyperdriveRating,
-    mglt,
 }: StarshipContentProps) => {
     // Hooks
     const { t } = useTranslation()
@@ -86,16 +85,6 @@ export const StarshipContent: React.FC<StarshipContentProps> = ({
                     {hyperdriveRating !== UNKNOWN
                         ? hyperdriveRating
                         : t('common:unknown')}
-                </CustomTypography>
-            </Box>
-            <Box pb={'0.5rem'}>
-                <CustomTypography
-                    textAlign={'center'}
-                    fontWeight={'bold'}
-                    fontSize={'0.8rem'}
-                >
-                    {uppercase('mglt' + ':')}{' '}
-                    {mglt !== UNKNOWN ? mglt : t('common:unknown')}
                 </CustomTypography>
             </Box>
         </Box>

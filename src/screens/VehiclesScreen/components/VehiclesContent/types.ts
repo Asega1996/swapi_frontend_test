@@ -3,4 +3,6 @@ export type VehicleContentProps = {
     price: string
     cargoCapacity: string
     crew: string
+    passengers: string
+    maxSpeed: string
 }

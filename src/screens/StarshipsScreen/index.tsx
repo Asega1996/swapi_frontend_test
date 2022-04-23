@@ -98,7 +98,6 @@ const StarshipsScreen = () => {
                                             hyperdriveRating={
                                                 item.hyperdrive_rating
                                             }
-                                            mglt={item.MGLT}
                                         />
                                     }
                                 />

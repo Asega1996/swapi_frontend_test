@@ -20,9 +20,9 @@ const CustomCardWithMediaRegular: React.FC<CustomCardWithMediaProps> = ({
             <Grid container>
                 <Grid item xs={12} sm={6}>
                     <CardMedia
+                        style={{ objectFit: 'scale-down' }}
                         component={'img'}
                         height="320"
-                        max-width="100%"
                         image={getImageUrlFromArray(
                             getImagesArrayToSearch(topic),
                             title
@@ -34,7 +34,8 @@ const CustomCardWithMediaRegular: React.FC<CustomCardWithMediaProps> = ({
                     <CardContent>
                         <CustomTypography
                             textAlign={'center'}
-                            fontSize={'1.5rem'}
+                            fontSize={'1.3rem'}
+                            fontWeight={'bold'}
                         >
                             {title}
                         </CustomTypography>

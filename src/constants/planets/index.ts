@@ -8,6 +8,7 @@ import HothImage from '@Assets/planets/Hoth.png'
 import KaminoImage from '@Assets/planets/Kamino.png'
 import NabooImage from '@Assets/planets/Naboo.png'
 import TatooineImage from '@Assets/planets/Tatooine.png'
+import YanivivImage from '@Assets/planets/yaviniv.png'
 
 export const PLANETS_IMAGES = [
     { name: 'Alderaan', imageUrl: AlderaanImage },
@@ -19,4 +20,5 @@ export const PLANETS_IMAGES = [
     { name: 'Kamino', imageUrl: KaminoImage },
     { name: 'Naboo', imageUrl: NabooImage },
     { name: 'Tatooine', imageUrl: TatooineImage },
+    { name: 'Yavin IV', imageUrl: YanivivImage },
 ]

@@ -43,7 +43,6 @@ const VehiclesScreen = () => {
     const getDefaultTotalCount = () => {
         return Math.ceil(availableVehicles.totalElements / DATA_ITEMS_PER_PAGE)
     }
-
     const getFilteredByInputTotalCount = () => {
         return Math.ceil(
             availableVehicles.data.filter((el: any) =>
@@ -82,7 +81,7 @@ const VehiclesScreen = () => {
                                 item
                                 xs={12}
                                 sm={12}
-                                md={12}
+                                md={6}
                                 lg={6}
                                 xl={6}
                             >
@@ -95,6 +94,10 @@ const VehiclesScreen = () => {
                                             price={item.cost_in_credits}
                                             cargoCapacity={item.cargo_capacity}
                                             crew={item.crew}
+                                            passengers={item.passengers}
+                                            maxSpeed={
+                                                item.max_atmosphering_speed
+                                            }
                                         />
                                     }
                                 />

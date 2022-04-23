@@ -4,5 +4,4 @@ export type StarshipContentProps = {
     cargoCapacity: string
     crew: string
     hyperdriveRating: string
-    mglt: string
 }

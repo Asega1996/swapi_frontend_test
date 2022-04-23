@@ -18,6 +18,8 @@ export const VehiclesContent: React.FC<VehicleContentProps> = ({
     cargoCapacity,
     crew,
     price,
+    passengers,
+    maxSpeed,
 }: VehicleContentProps) => {
     // Hooks
     const { t } = useTranslation()
@@ -72,6 +74,26 @@ export const VehiclesContent: React.FC<VehicleContentProps> = ({
                 >
                     {t('common:crew') + ':'}{' '}
                     {crew !== UNKNOWN ? crew : t('common:unknown')}
+                </CustomTypography>
+            </Box>
+            <Box pb={'0.5rem'}>
+                <CustomTypography
+                    textAlign={'center'}
+                    fontWeight={'bold'}
+                    fontSize={'0.8rem'}
+                >
+                    {t('vehicles:passengers') + ':'}{' '}
+                    {passengers !== UNKNOWN ? passengers : t('common:unknown')}
+                </CustomTypography>
+            </Box>
+            <Box pb={'0.5rem'}>
+                <CustomTypography
+                    textAlign={'center'}
+                    fontWeight={'bold'}
+                    fontSize={'0.8rem'}
+                >
+                    {t('vehicles:maxSpeed') + ':'}{' '}
+                    {maxSpeed !== UNKNOWN ? maxSpeed : t('common:unknown')}
                 </CustomTypography>
             </Box>
         </Box>

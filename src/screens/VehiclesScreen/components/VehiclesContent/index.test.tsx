@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import { StarshipContent } from '.'
+import { VehiclesContent } from '.'
 
 // MOCKS
 jest.mock('react-i18next', () => ({
@@ -22,12 +22,13 @@ const TEST_MANUFACTURER = 'Manufacturer Test'
 describe('StarshipsScreen -> Components -> StarshipsContent', () => {
     it('should render properly with formatted text', async () => {
         const { getByText } = await render(
-            <StarshipContent
+            <VehiclesContent
                 manufacturer={TEST_MANUFACTURER}
                 cargoCapacity={'50'}
                 crew={'30'}
                 price={'1000'}
-                hyperdriveRating={'2.0'}
+                maxSpeed={'100'}
+                passengers={'0'}
             />
         )
         expect(getByText(DATA_SHEET_I18N_CODE)).toBeDefined()
@@ -35,6 +36,7 @@ describe('StarshipsScreen -> Components -> StarshipsContent', () => {
         expect(getByText('common:cargoCapacity: 50')).toBeDefined()
         expect(getByText('common:crew: 30')).toBeDefined()
         expect(getByText('common:price: 1000')).toBeDefined()
-        expect(getByText('starships:hyperdriveRating: 2.0')).toBeDefined()
+        expect(getByText('vehicles:maxSpeed: 100')).toBeDefined()
+        expect(getByText('vehicles:passengers: 0')).toBeDefined()
     })
 })

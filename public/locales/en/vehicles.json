@@ -1,4 +1,6 @@
 {
     "title": "Star Wars Vehicles",
-    "searchByName": "Vehicle name"
+    "searchByName": "Vehicle name",
+    "maxSpeed": "Max speed",
+    "passengers": "Passengers"
 }
