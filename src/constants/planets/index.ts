@@ -1,3 +1,4 @@
+// PLANETS
 import AlderaanImage from '@Assets/planets/Alderaan.png'
 import BespinImage from '@Assets/planets/Bespin.png'
 import CoruscantImage from '@Assets/planets/Coruscant.png'

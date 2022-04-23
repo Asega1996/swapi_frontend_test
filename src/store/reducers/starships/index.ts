@@ -1,10 +1,10 @@
+import { starshipActions } from '@Store/actions/starships'
 import { createReducer } from 'deox'
 import { always, evolve } from 'ramda'
-import { planetActions } from '@Store/actions/planets'
 
 // Default State type definition
 type DefaultState = {
-    availablePlanets: any
+    availableStarships: any
     fetching: boolean
     error: boolean
     success: boolean
@@ -12,7 +12,7 @@ type DefaultState = {
 
 // Default state object
 const defaultState: DefaultState = {
-    availablePlanets: {},
+    availableStarships: {},
     fetching: false,
     success: false,
     error: false,
@@ -20,7 +20,7 @@ const defaultState: DefaultState = {
 
 // Reducer definition
 export default createReducer(defaultState, (handleAction) => [
-    handleAction(planetActions.fetchPlanets, (state) =>
+    handleAction(starshipActions.fetchStarships, (state) =>
         evolve(
             {
                 success: always(false),
@@ -31,10 +31,10 @@ export default createReducer(defaultState, (handleAction) => [
         )
     ),
 
-    handleAction(planetActions.fetchPlanetsDone, (state, { payload }) =>
+    handleAction(starshipActions.fetchStarshipsDone, (state, { payload }) =>
         evolve(
             {
-                availablePlanets: always(payload.response),
+                availableStarships: always(payload.response),
                 success: always(false),
                 error: always(false),
                 fetching: always(false),
@@ -43,25 +43,25 @@ export default createReducer(defaultState, (handleAction) => [
         )
     ),
 
-    handleAction(planetActions.fetchPlanetsError, (state) =>
+    handleAction(starshipActions.fetchStarshipsError, (state) =>
         evolve(
             {
                 success: always(false),
                 error: always(true),
                 fetching: always(false),
-                availablePlanets: always({}),
+                availableStarships: always({}),
             },
             state
         )
     ),
 
-    handleAction(planetActions.resetPlanets, (state) =>
+    handleAction(starshipActions.resetStarships, (state) =>
         evolve(
             {
                 success: always(defaultState.success),
                 error: always(defaultState.error),
                 fetching: always(defaultState.fetching),
-                availablePlanets: always(defaultState.availablePlanets),
+                availableStarships: always(defaultState.availableStarships),
             },
             state
         )

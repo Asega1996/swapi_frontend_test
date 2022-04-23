@@ -6,5 +6,6 @@
     "starships": "Naves",
     "vehicles": "Vehículos",
     "unknown": "Desconocido",
-    "errorMessage": "Ups, parece que algo ha ido mal, inténtelo de nuevo más tarde."
+    "errorMessage": "Ups, parece que algo ha ido mal, inténtelo de nuevo más tarde.",
+    "noResults": "Lamentablemente no hay resultados para la búsqueda realizada"
 }

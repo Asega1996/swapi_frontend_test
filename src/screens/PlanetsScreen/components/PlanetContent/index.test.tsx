@@ -14,19 +14,6 @@ jest.mock('react-i18next', () => ({
     },
 }))
 
-jest.mock('react-router-dom', () => {
-    // Require the original module to not be mocked...
-    const originalModule = jest.requireActual('react-router-dom')
-
-    return {
-        __esModule: true,
-        ...originalModule,
-        // add your noops here
-        useParams: jest.fn(),
-        useHistory: jest.fn(),
-    }
-})
-
 // TESTING CONSTANTS
 const TEST_STRING = 'TEST STRING'
 const DIAMETER_I18N_CODE = 'PLANETS:DIAMETER'

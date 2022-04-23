@@ -17,6 +17,7 @@ export const PlanetContent: React.FC<PlanetContentProps> = ({
     rotationPeriod,
     population,
 }: PlanetContentProps) => {
+    //Hooks
     const { t } = useTranslation()
     return (
         <Box p={'1rem'} height={230}>

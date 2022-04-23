@@ -1,16 +1,17 @@
 import React from 'react'
 // UI components
 import { Box, Drawer, Grid } from '@mui/material'
-import { IconButtonHeader } from '../../style'
+import { CustomNavLink, IconButtonHeader } from '../../style'
 import MenuIcon from '@mui/icons-material/Menu'
 // Own Components
 import CustomLanguageSelector from '@Components/CustomLanguageSelector'
-import { uppercase } from '@Utils/text-formatters'
 import CustomTypography from '@Components/CustomTypography'
 // Menu entries
 import { MENU_ENTRIES } from '../../constants'
 // Hooks
 import { useTranslation } from 'react-i18next'
+// Transformations
+import { uppercase } from '@Utils/text-formatters'
 
 const SidenavMenu = () => {
     // Hooks
@@ -41,14 +42,16 @@ const SidenavMenu = () => {
                     >
                         <CustomLanguageSelector />
                         {MENU_ENTRIES.map((item, index) => (
-                            <Box key={index} my="2rem">
-                                <CustomTypography
-                                    textAlign={'center'}
-                                    fontWeight={'bold'}
-                                >
-                                    {uppercase(t(item.i18nCode))}
-                                </CustomTypography>
-                            </Box>
+                            <CustomNavLink to={item.linkTo} key={index}>
+                                <Box my="2rem">
+                                    <CustomTypography
+                                        textAlign={'center'}
+                                        fontWeight={'bold'}
+                                    >
+                                        {uppercase(t(item.i18nCode))}
+                                    </CustomTypography>
+                                </Box>
+                            </CustomNavLink>
                         ))}
                     </Box>
                 </Drawer>

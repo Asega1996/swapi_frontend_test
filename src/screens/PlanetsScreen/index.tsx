@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from 'react'
 // UI components
 import { Box, Grid, Pagination } from '@mui/material'
-import CustomCardWithMedia from '@Components/CustomCardWithMedia'
+import CustomCardWithMedia from '@Components/CustomCardWithMedia/Small'
 import CustomTypography from '@Components/CustomTypography'
 // Hooks
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
-import { planetActions } from '@Store/actions/planets'
 import { useSelector } from 'react-redux'
 // RootState
 import { RootState } from '@Store/reducers'
-import CustomLoader from '@Components/CustomLoader'
 // Own Components
 import { PlanetContent } from './components/PlanetContent'
+import CustomLoader from '@Components/CustomLoader'
+import CustomError from '@Components/CustomErrorMessage'
 // Constants
 import { DATA_ITEMS_PER_PAGE } from './constants'
-import CustomError from '@Components/CustomErrorMessage'
+// Actions
+import { planetActions } from '@Store/actions/planets'
+// Utils
+import { scrollToTopOfTheScreen } from '@Utils/scrollToTopOfTheScreen'
 
 const PlanetScreen = () => {
     // Hooks
@@ -88,7 +91,10 @@ const PlanetScreen = () => {
                             )}
                             showFirstButton
                             showLastButton
-                            onChange={(event, page) => setCurrentPage(page)}
+                            onChange={(event, page) => {
+                                setCurrentPage(page)
+                                scrollToTopOfTheScreen()
+                            }}
                         />
                     </Grid>
                 )}

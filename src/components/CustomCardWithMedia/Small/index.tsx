@@ -1,12 +1,12 @@
 import React from 'react'
 import { CardContent, CardMedia } from '@mui/material'
 import { CustomCardWrapper } from './styles'
-import { CustomCardWithMediaProps } from './types'
+import { CustomCardWithMediaProps } from '../types'
 import CustomTypography from '@Components/CustomTypography'
 import { getImageUrlFromArray } from '@Utils/getImageUrlFromArray'
 import { getImagesArrayToSearch } from '@Utils/getImagesArrayToSearch'
 
-const CustomCardWithMedia: React.FC<CustomCardWithMediaProps> = ({
+const CustomCardWithMediaSmall: React.FC<CustomCardWithMediaProps> = ({
     title,
     topic,
     content,
@@ -33,7 +33,7 @@ const CustomCardWithMedia: React.FC<CustomCardWithMediaProps> = ({
                 content
             )}
             <CardContent>
-                <CustomTypography textAlign={'center'} variant="h5">
+                <CustomTypography textAlign={'center'} fontSize={'1.5rem'}>
                     {title}
                 </CustomTypography>
             </CardContent>
@@ -41,4 +41,4 @@ const CustomCardWithMedia: React.FC<CustomCardWithMediaProps> = ({
     )
 }
 
-export default CustomCardWithMedia
+export default CustomCardWithMediaSmall

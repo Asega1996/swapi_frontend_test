@@ -6,5 +6,6 @@
     "starships": "Starships",
     "vehicles": "Vehicles",
     "unknown": "Unknown",
-    "errorMessage": "Oops, something seems to have gone wrong, try again later"
+    "errorMessage": "Oops, something seems to have gone wrong, try again later",
+    "noResults": "Unfortunately there are no results for the search performed"
 }
