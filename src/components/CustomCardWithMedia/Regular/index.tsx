@@ -16,12 +16,13 @@ const CustomCardWithMediaRegular: React.FC<CustomCardWithMediaProps> = ({
     content,
 }: CustomCardWithMediaProps) => {
     return (
-        <CustomCardWrapper>
+        <CustomCardWrapper elevation={8}>
             <Grid container>
                 <Grid item xs={12} sm={6}>
                     <CardMedia
-                        component="img"
+                        component={'img'}
                         height="320"
+                        max-width="100%"
                         image={getImageUrlFromArray(
                             getImagesArrayToSearch(topic),
                             title

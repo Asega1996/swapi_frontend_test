@@ -1,5 +1,5 @@
 import React from 'react'
-import { CardContent, CardMedia } from '@mui/material'
+import { Box, CardContent, CardMedia } from '@mui/material'
 import { CustomCardWrapper } from './styles'
 import { CustomCardWithMediaProps } from '../types'
 import CustomTypography from '@Components/CustomTypography'
@@ -16,6 +16,7 @@ const CustomCardWithMediaSmall: React.FC<CustomCardWithMediaProps> = ({
 
     return (
         <CustomCardWrapper
+            elevation={8}
             onClick={() => setFade(!fade)}
             sx={{ maxWidth: 345 }}
         >
@@ -33,9 +34,11 @@ const CustomCardWithMediaSmall: React.FC<CustomCardWithMediaProps> = ({
                 content
             )}
             <CardContent>
-                <CustomTypography textAlign={'center'} fontSize={'1.5rem'}>
-                    {title}
-                </CustomTypography>
+                <Box pt={1}>
+                    <CustomTypography textAlign={'center'} fontSize={'1.5rem'}>
+                        {title}
+                    </CustomTypography>
+                </Box>
             </CardContent>
         </CustomCardWrapper>
     )

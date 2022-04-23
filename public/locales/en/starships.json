@@ -1,14 +1,5 @@
 {
     "title": "Star Wars Starships",
-    "datasheet": "Data sheet",
-    "manufacturer": "Manufacturer",
-    "price": "Price in credits",
-    "cargoCapacity": "Cargo capacity",
-    "crew": "Crew",
-    "cargoDes": "Descending capacity",
-    "cargoAsc": "Ascending capacity",
-    "crewDes": "Descending crew",
-    "crewAsc": "Ascending crew",
-    "whitoutOrder": "Without order",
-    "searchByName": "Starship name"
+    "searchByName": "Starship name",
+    "hyperdriveRating": "Hyperdrive rating"
 }

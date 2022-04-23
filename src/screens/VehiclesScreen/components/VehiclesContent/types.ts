@@ -1,8 +1,6 @@
-export type StarshipContentProps = {
+export type VehicleContentProps = {
     manufacturer: string
     price: string
     cargoCapacity: string
     crew: string
-    hyperdriveRating: string
-    mglt: string
 }

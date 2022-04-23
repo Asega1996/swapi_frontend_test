@@ -12,28 +12,28 @@ import { RootState } from '@Store/reducers'
 import CustomLoader from '@Components/CustomLoader'
 // Own Components
 import CustomError from '@Components/CustomErrorMessage'
-import { StarshipContent } from './components/StarshipContent'
-import FilterStarships from './components/FilterStarships'
+import { VehiclesContent } from './components/VehiclesContent'
+import FilterStarships from './components/FilterVehicles'
 // Constants
 import { DATA_ITEMS_PER_PAGE } from './constants'
 // Actions
-import { starshipActions } from '@Store/actions/starships'
+import { vehiclesActions } from '@Store/actions/vehicles'
 // Utils
 import { scrollToTopOfTheScreen } from '@Utils/scrollToTopOfTheScreen'
 import { sortByCriteria } from '@Utils/sortByCriteria'
 
-const StarshipsScreen = () => {
+const VehiclesScreen = () => {
     // Hooks
     const { t } = useTranslation()
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(starshipActions.fetchStarships())
+        dispatch(vehiclesActions.fetchVehicles())
         return () => {
-            dispatch(starshipActions.resetStarships())
+            dispatch(vehiclesActions.resetVehicles())
         }
     }, [])
-    const { fetching, availableStarships, error } = useSelector(
-        (state: RootState) => state.starships
+    const { fetching, availableVehicles, error } = useSelector(
+        (state: RootState) => state.vehicles
     )
     const [currentPage, setCurrentPage] = useState(1)
     const [inputFilter, setInputFilter] = useState('')
@@ -41,12 +41,12 @@ const StarshipsScreen = () => {
 
     // Aux Functions
     const getDefaultTotalCount = () => {
-        return Math.ceil(availableStarships.totalElements / DATA_ITEMS_PER_PAGE)
+        return Math.ceil(availableVehicles.totalElements / DATA_ITEMS_PER_PAGE)
     }
 
     const getFilteredByInputTotalCount = () => {
         return Math.ceil(
-            availableStarships.data.filter((el: any) =>
+            availableVehicles.data.filter((el: any) =>
                 el.name.includes(inputFilter)
             ).length / DATA_ITEMS_PER_PAGE
         )
@@ -56,12 +56,12 @@ const StarshipsScreen = () => {
         <Box mt="2rem">
             <Box mb="2rem">
                 <CustomTypography textAlign={'center'} fontSize={'2rem'}>
-                    {t('starships:title')}
+                    {t('vehicles:title')}
                 </CustomTypography>
             </Box>
             {fetching && <CustomLoader />}
             {error && <CustomError />}
-            {availableStarships.data && (
+            {availableVehicles.data && (
                 <FilterStarships
                     setInputFilter={setInputFilter}
                     setCurrentPage={setCurrentPage}
@@ -69,8 +69,8 @@ const StarshipsScreen = () => {
                 />
             )}
             <Grid container spacing={2}>
-                {availableStarships.data &&
-                    sortByCriteria(availableStarships.data, ordenationFilter)
+                {availableVehicles.data &&
+                    sortByCriteria(availableVehicles.data, ordenationFilter)
                         .filter((el: any) => el.name.includes(inputFilter))
                         .slice(
                             (currentPage - 1) * DATA_ITEMS_PER_PAGE,
@@ -87,26 +87,22 @@ const StarshipsScreen = () => {
                                 xl={6}
                             >
                                 <CustomCardWithMedia
-                                    topic="starships"
+                                    topic="vehicles"
                                     title={item.name}
                                     content={
-                                        <StarshipContent
+                                        <VehiclesContent
                                             manufacturer={item.manufacturer}
                                             price={item.cost_in_credits}
                                             cargoCapacity={item.cargo_capacity}
                                             crew={item.crew}
-                                            hyperdriveRating={
-                                                item.hyperdrive_rating
-                                            }
-                                            mglt={item.MGLT}
                                         />
                                     }
                                 />
                             </Grid>
                         ))}
-                {availableStarships.data &&
+                {availableVehicles.data &&
                     inputFilter.length > 0 &&
-                    availableStarships.data.filter((el: any) =>
+                    availableVehicles.data.filter((el: any) =>
                         el.name.includes(inputFilter)
                     ).length === 0 && (
                         <Grid
@@ -120,7 +116,7 @@ const StarshipsScreen = () => {
                             </CustomTypography>
                         </Grid>
                     )}
-                {availableStarships.data && (
+                {availableVehicles.data && (
                     <Grid
                         py={2}
                         alignItems="center"
@@ -148,4 +144,4 @@ const StarshipsScreen = () => {
     )
 }
 
-export default StarshipsScreen
+export default VehiclesScreen

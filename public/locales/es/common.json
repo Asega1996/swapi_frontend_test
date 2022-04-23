@@ -7,5 +7,15 @@
     "vehicles": "Vehículos",
     "unknown": "Desconocido",
     "errorMessage": "Ups, parece que algo ha ido mal, inténtelo de nuevo más tarde.",
-    "noResults": "Lamentablemente no hay resultados para la búsqueda realizada"
+    "noResults": "Lamentablemente no hay resultados para la búsqueda realizada",
+    "datasheet": "Ficha técnica",
+    "manufacturer": "Fabricante",
+    "price": "Valor en créditos",
+    "cargoCapacity": "Capacidad de carga",
+    "crew": "Tripulación",
+    "cargoDes": "Capacidad descendente",
+    "cargoAsc": "Capacidad ascendente",
+    "crewDes": "Tripulación descendente",
+    "crewAsc": "Tripulación ascendente",
+    "whitoutOrder": "Sin ordenación"
 }

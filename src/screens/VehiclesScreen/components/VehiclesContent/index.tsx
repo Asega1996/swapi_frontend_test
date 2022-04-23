@@ -9,18 +9,16 @@ import { useTranslation } from 'react-i18next'
 import { uppercase } from '@Utils/text-formatters'
 import theme from '@Styles/theme'
 // Types
-import { StarshipContentProps } from './types'
+import { VehicleContentProps } from './types'
 
 const UNKNOWN = 'unknown'
 
-export const StarshipContent: React.FC<StarshipContentProps> = ({
+export const VehiclesContent: React.FC<VehicleContentProps> = ({
     manufacturer,
     cargoCapacity,
     crew,
     price,
-    hyperdriveRating,
-    mglt,
-}: StarshipContentProps) => {
+}: VehicleContentProps) => {
     // Hooks
     const { t } = useTranslation()
 
@@ -74,28 +72,6 @@ export const StarshipContent: React.FC<StarshipContentProps> = ({
                 >
                     {t('common:crew') + ':'}{' '}
                     {crew !== UNKNOWN ? crew : t('common:unknown')}
-                </CustomTypography>
-            </Box>
-            <Box pb={'0.5rem'}>
-                <CustomTypography
-                    textAlign={'center'}
-                    fontWeight={'bold'}
-                    fontSize={'0.8rem'}
-                >
-                    {t('starships:hyperdriveRating') + ':'}{' '}
-                    {hyperdriveRating !== UNKNOWN
-                        ? hyperdriveRating
-                        : t('common:unknown')}
-                </CustomTypography>
-            </Box>
-            <Box pb={'0.5rem'}>
-                <CustomTypography
-                    textAlign={'center'}
-                    fontWeight={'bold'}
-                    fontSize={'0.8rem'}
-                >
-                    {uppercase('mglt' + ':')}{' '}
-                    {mglt !== UNKNOWN ? mglt : t('common:unknown')}
                 </CustomTypography>
             </Box>
         </Box>

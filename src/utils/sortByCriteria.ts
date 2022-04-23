@@ -8,7 +8,7 @@ import {
 import { pipe } from 'ramda'
 
 const transformUnknownToZero = (val: any) => {
-    return val.toLowerCase() === 'unknown' ? 0 : val
+    return val.toLowerCase() === ('unknown' || 'none') ? 0 : val
 }
 
 const deleteCommas = (val: any) => {

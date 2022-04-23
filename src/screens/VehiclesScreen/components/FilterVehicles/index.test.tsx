@@ -19,7 +19,7 @@ let setCurrentPage = jest.fn()
 let setOrdenationFilter = jest.fn()
 
 // TESTING CONST
-const PLACEHOLDER_TEXT = 'starships:searchByName'
+const PLACEHOLDER_TEXT = 'vehicles:searchByName'
 const CARGO_DES_I18N_CODE = 'common:cargoAsc'
 const CARGO_ASC_I18N_CODE = 'common:cargoAsc'
 const CREW_DES_I18N_CODE = 'common:crewDes'

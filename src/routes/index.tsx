@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import PlanetScreen from '@Screens/PlanetsScreen'
 import StarshipsScreen from '@Screens/StarshipsScreen'
 import PageNotFound from '@Components/PageNotFound'
+import VehiclesScreen from '@Screens/VehiclesScreen'
 
 const AppRoutes = () => {
     return (
@@ -15,7 +16,7 @@ const AppRoutes = () => {
             {/* Public Routes */}
             <Route path="/" element={<PlanetScreen />} />
             <Route path="/starships" element={<StarshipsScreen />} />
-            <Route path="/vehicles" element={<>div</>} />
+            <Route path="/vehicles" element={<VehiclesScreen />} />
         </Routes>
     )
 }

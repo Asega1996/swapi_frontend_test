@@ -15,11 +15,13 @@ jest.mock('react-i18next', () => ({
 }))
 
 // TESTING CONSTANTS
-const DATA_SHEET_I18N_CODE = 'STARSHIPS:DATASHEET'
+const DATA_SHEET_I18N_CODE = 'COMMON:DATASHEET'
 const TEST_MANUFACTURER = 'Manufacturer Test'
-const CARGO_CAPACITY_I18N_CODE = 'starships:cargoCapacity'
-const CREW_I18N_CODE = 'starships:crew'
-const PRICE_I18N_CODE = 'starships:price'
+const CARGO_CAPACITY_I18N_CODE = 'common:cargoCapacity'
+const CREW_I18N_CODE = 'common:crew'
+const PRICE_I18N_CODE = 'common:price'
+const HYPERDRIVE_RATING_I18N_CODE = 'starships:hyperdriveRating'
+const MGLT_I18N_CODE = 'starships:mglt'
 
 // TEST BODY
 describe('StarshipsScreen -> Components -> StarshipsContent', () => {
@@ -30,6 +32,8 @@ describe('StarshipsScreen -> Components -> StarshipsContent', () => {
                 cargoCapacity={CARGO_CAPACITY_I18N_CODE}
                 crew={CREW_I18N_CODE}
                 price={PRICE_I18N_CODE}
+                hyperdriveRating={HYPERDRIVE_RATING_I18N_CODE}
+                mglt={MGLT_I18N_CODE}
             />
         )
         expect(getByText(DATA_SHEET_I18N_CODE)).toBeDefined()

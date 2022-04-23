@@ -1,14 +1,5 @@
 {
     "title": "Naves de Star Wars",
-    "datasheet": "Ficha técnica",
-    "manufacturer": "Fabricante",
-    "price": "Valor en créditos",
-    "cargoCapacity": "Capacidad de carga",
-    "crew": "Tripulación",
-    "cargoDes": "Capacidad descendente",
-    "cargoAsc": "Capacidad ascendente",
-    "crewDes": "Tripulación descendente",
-    "crewAsc": "Tripulación ascendente",
-    "whitoutOrder": "Sin ordenación",
-    "searchByName": "Nombre de la nave"
+    "searchByName": "Nombre de la nave",
+    "hyperdriveRating": "Calificación de hiperimpulsor"
 }
