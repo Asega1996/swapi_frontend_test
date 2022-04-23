@@ -1,6 +1,6 @@
-import { render } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import PlanetScreen from '.'
+import VehiclesScreen from '.'
 import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 
@@ -18,45 +18,46 @@ jest.mock('react-i18next', () => ({
 
 const mockStore = configureStore()
 const storeSuccess = mockStore({
-    planets: {
+    vehicles: {
         fetching: false,
         success: true,
         error: false,
-        availablePlanets: {
+        availableVehicles: {
             totalElements: 3,
-            data: [{ name: 'Test1' }, { name: 'Test2' }, { name: 'Test3' }],
+            data: [{ name: 'Starship' }, { name: 'Test' }, { name: 'Sample' }],
         },
     },
 })
 
 const storeError = mockStore({
-    planets: {
+    vehicles: {
         fetching: false,
         success: false,
         error: true,
-        availablePlanets: {},
+        availableVehicles: {},
     },
 })
 
 const storeFetching = mockStore({
-    planets: {
+    vehicles: {
         fetching: true,
         success: false,
         error: true,
-        availablePlanets: {},
+        availableVehicles: {},
     },
 })
 
 // TESTING CONSTANTS
-const PLANETS_TITLE = 'planets:title'
+const PLANETS_TITLE = 'vehicles:title'
 const PROGRESS_BAR_ROLE = 'progressbar'
+const PLACEHOLDER_TEXT = 'vehicles:searchByName'
 
 // TEST BODY
-describe('PlanetsScreen', () => {
+describe('VehiclesScreen', () => {
     it('should render the screen title code', async () => {
         const { getByText } = await render(
             <Provider store={storeSuccess}>
-                <PlanetScreen />
+                <VehiclesScreen />
             </Provider>
         )
         expect(getByText(PLANETS_TITLE)).toBeDefined()
@@ -66,7 +67,7 @@ describe('PlanetsScreen', () => {
         it('should render a loader when store is fetching', async () => {
             const { getByText, getByRole } = await render(
                 <Provider store={storeFetching}>
-                    <PlanetScreen />
+                    <VehiclesScreen />
                 </Provider>
             )
             expect(getByText('common:loading')).toBeDefined()
@@ -78,7 +79,7 @@ describe('PlanetsScreen', () => {
         it('should render an error message when store is error', async () => {
             const { getByText } = await render(
                 <Provider store={storeError}>
-                    <PlanetScreen />
+                    <VehiclesScreen />
                 </Provider>
             )
             expect(getByText('common:errorMessage')).toBeDefined()
@@ -86,15 +87,31 @@ describe('PlanetsScreen', () => {
     })
 
     describe('Success State', () => {
-        it('should render a list of planets when store is success', async () => {
+        it('should render a list of vehicles when store is success', async () => {
             const { getByText } = await render(
                 <Provider store={storeSuccess}>
-                    <PlanetScreen />
+                    <VehiclesScreen />
                 </Provider>
             )
-            expect(getByText('Test1')).toBeDefined()
-            expect(getByText('Test2')).toBeDefined()
-            expect(getByText('Test3')).toBeDefined()
+            expect(getByText('Starship')).toBeDefined()
+            expect(getByText('Test')).toBeDefined()
+            expect(getByText('Sample')).toBeDefined()
+        })
+
+        it('should hide results when user try a filer', async () => {
+            const { getByPlaceholderText, queryByText } = await render(
+                <Provider store={storeSuccess}>
+                    <VehiclesScreen />
+                </Provider>
+            )
+
+            await fireEvent.change(getByPlaceholderText(PLACEHOLDER_TEXT), {
+                target: { value: 'S' },
+            })
+
+            expect(queryByText('Starship')).not.toBeNull()
+            expect(queryByText('Test')).toBeNull()
+            expect(queryByText('Sample')).not.toBeNull()
         })
     })
 })

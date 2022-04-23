@@ -19,7 +19,7 @@ const DATA_SHEET_I18N_CODE = 'COMMON:DATASHEET'
 const TEST_MANUFACTURER = 'Manufacturer Test'
 
 // TEST BODY
-describe('StarshipsScreen -> Components -> StarshipsContent', () => {
+describe('VehiclesScreen -> Components -> VehiclesContent', () => {
     it('should render properly with formatted text', async () => {
         const { getByText } = await render(
             <VehiclesContent

@@ -4,7 +4,7 @@ import { planetActions } from '@Store/actions/planets'
 
 // Default State type definition
 type DefaultState = {
-    availablePlanets: any
+    availablePlanets: { totalElements: number; data: any[] } | {}
     fetching: boolean
     error: boolean
     success: boolean
@@ -35,7 +35,7 @@ export default createReducer(defaultState, (handleAction) => [
         evolve(
             {
                 availablePlanets: always(payload.response),
-                success: always(false),
+                success: always(true),
                 error: always(false),
                 fetching: always(false),
             },

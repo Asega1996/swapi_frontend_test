@@ -4,7 +4,7 @@ import { always, evolve } from 'ramda'
 
 // Default State type definition
 type DefaultState = {
-    availableStarships: any
+    availableStarships: { totalElements: number; data: any[] } | {}
     fetching: boolean
     error: boolean
     success: boolean
@@ -35,7 +35,7 @@ export default createReducer(defaultState, (handleAction) => [
         evolve(
             {
                 availableStarships: always(payload.response),
-                success: always(false),
+                success: always(true),
                 error: always(false),
                 fetching: always(false),
             },
